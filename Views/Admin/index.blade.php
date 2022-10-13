@@ -22,6 +22,26 @@
             <div class='card-body'>
                 <p>{{ sc_language_render($pathPlugin.'::lang.sms.bulk.intro') }}</p>
 
+                <fieldset>
+                    <legend>{{ sc_language_render($pathPlugin.'::lang.filters.legend') }}</legend>
+
+                    <div class='form-group row'>
+                        <label for='seven_filter_only_enabled' class='col-sm-2 col-form-label'>
+                            {{ sc_language_render($pathPlugin.'::lang.filters.status.label') }}
+                        </label>
+
+                        <div class='col-sm-8'>
+                            <input
+                                    checked
+                                    class='checkbox'
+                                    id='seven_filter_only_enabled'
+                                    name='seven_filter_only_enabled'
+                                    type='checkbox'
+                            />
+                        </div>
+                    </div>
+                </fieldset>
+
                 <div class='form-group row'>
                     <label for='seven_debug' class='col-sm-2 col-form-label'>
                         {{ sc_language_render($pathPlugin.'::lang.sms.debug.label') }}

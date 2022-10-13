@@ -8,6 +8,12 @@ return [
         'heading' => 'seven',
         'bulk_sms' => 'Bulk SMS',
     ],
+    'filters' => [
+        'legend' => 'Filters',
+        'status' => [
+            'label' => 'Only enabled customers',
+        ]
+    ],
     'sms' => [
         'bulk' => [
             'heading' => 'Bulk SMS',

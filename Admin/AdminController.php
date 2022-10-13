@@ -29,13 +29,27 @@ class AdminController extends RootAdminController {
         $label = $request->input('seven_label');
         $performance_tracking = $request->boolean('seven_performance_tracking');
         $text = $request->input('seven_text');
+        $onlyEnabled = $request->boolean('seven_filter_only_enabled');
 
+        $status = [1];
+        if (!$onlyEnabled) $status[] = 0;
+
+        $phoneCol = 'phone';
         $to = [];
-        foreach (AdminCustomer::all()->getIterator() as $customer) {
+        $query = AdminCustomer::query()
+            ->where('store_id', '=', session('adminStoreId'))
+            ->whereNotNull($phoneCol)
+            ->where($phoneCol, '<>', '')
+            ->whereIn('status', $status)
+        ;
+
+        foreach ($query->get()->getIterator() as $customer) {
             /** @var AdminCustomer $customer */
             $phone =  $customer->getAttribute('phone');
-            if ($phone && $phone !== '') $to[] = $phone;
+            $to[] = $phone;
         }
+
+        $to = array_unique($to);
         $to = implode(',', $to);
         $params = compact(
             'debug',
@@ -58,21 +72,22 @@ class AdminController extends RootAdminController {
     }
 
     private function apiCall(string $method, string $endpoint, array $formParams = []) {
-        $body = null;
-        $uri = 'https://gateway.sms77.io/api/' . $endpoint;
-        $client = new Client();
         try {
-            $res = $client->request($method, $uri, [
+            $uri = 'https://gateway.sms77.io/api/' . $endpoint;
+            $res = (new Client)->request($method, $uri, [
                 'headers' => [
                     'SentWith' => 'S-Cart',
-                    'X-Api-Key' => sc_config($this->plugin->configKey . '_api_key'),
+                    'X-Api-Key' => $this->getApiKey(),
                 ],
                 'form_params' => $formParams,
             ]);
-            $body = json_decode((string)$res->getBody());
+            return json_decode((string)$res->getBody());
         } catch (GuzzleException $e) {
-           return $e;
+            return $e;
         }
-        return $body;
+    }
+
+    private function getApiKey() {
+        return sc_config($this->plugin->configKey . '_api_key');
     }
 }
