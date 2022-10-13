@@ -1,0 +1,11 @@
+{
+    "auth": "seven communications GmbH & Co.KG",
+    "configCode": "Other",
+    "configGroup": "Plugins",
+    "configKey": "Seven",
+    "email": "support@seven.io",
+    "image": "images/logo.png",
+    "link": "https://seven.io",
+    "name": "seven",
+    "version": "1.0"
+}
