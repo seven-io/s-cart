@@ -73,7 +73,7 @@ class AdminController extends RootAdminController {
 
     private function apiCall(string $method, string $endpoint, array $formParams = []) {
         try {
-            $uri = 'https://gateway.sms77.io/api/' . $endpoint;
+            $uri = 'https://gateway.seven.io/api/' . $endpoint;
             $res = (new Client)->request($method, $uri, [
                 'headers' => [
                     'SentWith' => 'S-Cart',

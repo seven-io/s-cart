@@ -1,11 +1,10 @@
-![](https://seven.io/seven_outline_white.svg "sms77 Logo")
+![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
 
-The official [seven](https://seven.io) plugin for [S-cart](https://s-cart.org/).
+The official [seven](https://www.seven.io) plugin for [S-Cart](https://s-cart.org/).
 
 ## Prerequisites
 
-- [seven](https://www.sms77.io) API Key - can be created in
-  your [developer dashboard](https://app.sms77.io/developer)
+- An [API Key](https://help.seven.io/en/api-key-access) from seven
 - [S-cart](https://s-cart.org/) - tested with v7.1.x & v7.2x
 
 ## Features
@@ -16,6 +15,6 @@ Limit to enabled/disabled customer status.
 
 ## Support
 
-Need help? Feel free to [contact us](https://www.sms77.io/en/company/contact).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact).
 
 [![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
