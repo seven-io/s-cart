@@ -22,7 +22,6 @@ class AdminController extends RootAdminController {
     }
 
     public function bulkSms(Request $request) {
-        $debug = $request->boolean('seven_debug');
         $flash = $request->boolean('seven_flash');
         $foreign_id = $request->input('seven_foreign_id');
         $from = $request->input('seven_from');
@@ -52,7 +51,6 @@ class AdminController extends RootAdminController {
         $to = array_unique($to);
         $to = implode(',', $to);
         $params = compact(
-            'debug',
             'flash',
             'foreign_id',
             'from',

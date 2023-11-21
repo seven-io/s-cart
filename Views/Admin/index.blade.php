@@ -43,21 +43,6 @@
                 </fieldset>
 
                 <div class='form-group row'>
-                    <label for='seven_debug' class='col-sm-2 col-form-label'>
-                        {{ sc_language_render($pathPlugin.'::lang.sms.debug.label') }}
-                    </label>
-
-                    <div class='col-sm-8'>
-                        <input
-                                class='checkbox'
-                                id='seven_debug'
-                                name='seven_debug'
-                                type='checkbox'
-                        />
-                    </div>
-                </div>
-
-                <div class='form-group row'>
                     <label for='seven_flash' class='col-sm-2 col-form-label'>
                         {{ sc_language_render($pathPlugin.'::lang.sms.flash.label') }}
                     </label>

@@ -19,9 +19,6 @@ return [
             'heading' => 'Bulk SMS',
             'intro' => 'This action sends SMS to all customers at once.',
         ],
-        'debug' => [
-            'label' => 'Debug',
-        ],
         'flash' => [
             'label' => 'Flash',
         ],

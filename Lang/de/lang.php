@@ -19,9 +19,6 @@ return [
             'heading' => 'Massen-SMS versenden',
             'intro' => 'Diese Aktion versendet SMS an die gesamte Kundschaft gleichzeitig.',
         ],
-        'debug' => [
-            'label' => 'Debug',
-        ],
         'flash' => [
             'label' => 'Flash',
         ],
