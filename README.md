@@ -1,4 +1,4 @@
-![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
+<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
 
 The official [seven](https://www.seven.io) plugin for [S-Cart](https://s-cart.org/).
 
